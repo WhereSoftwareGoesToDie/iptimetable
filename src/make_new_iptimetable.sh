@@ -1,8 +1,7 @@
 #!/bin/bash
 #
-#
-# Create a new sparse iptimetable database
-#
+# Create a new sparse iptimetable database table
+# 
 # e.g. ./make_new_iptimetable.sh testdb ip_space.txt $(date +%s -d "1 Jan 2014") 365
 #
 
@@ -38,5 +37,9 @@ cp $IPSPACEFILE ${DBNAME}.ipspace
 echo "Writing dimensions"
 echo $ROWS $COLS > "${DBNAME}.dims"
 
+echo "Writing start timestamp"
+echo $STARTTIMESTAMP > "${DBNAME}.start"
 
-chmod a-w "${DBNAME}.ipspace" "${DBNAME}.dims"
+chmod a-w "${DBNAME}.ipspace" "${DBNAME}.dims" "${DBNAME}.start"
+
+echo "Done"
