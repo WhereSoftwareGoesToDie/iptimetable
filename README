@@ -1,0 +1,17 @@
+Keeping track of IPv4 traffic usage
+
+Data is sourced from vaultaire, and collated into a series
+of time histograms (one per IP, per direction).
+
+Once the data is in this form, it is then possible to very
+quickly access the exact traffic usage of an IP for any time
+period, with a variable granularity defined at query time.
+
+
+This code is intended to be optimised for high volume throughput
+on the input side, and very fast reads on the output side.
+
+
+Requirements:
+
+	liblisant: https://github.com/anchor/liblisant
